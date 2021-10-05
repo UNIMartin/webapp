@@ -2,13 +2,15 @@
 
 // =========== Product functionality =========== //
 /*
-global variables
+global variables (Casper)
 */
 let _frugter = [];
+let _smoothies = [];
 let _selectedFrugtId;
+let _selectedSmoothieId;
 
 /*
-Fetches json data from the file frugter.json
+Fetches json data from the file frugter.json (Casper)
 */
 async function fetchData() {
   const response = await fetch('json/frugter.json');
@@ -21,7 +23,7 @@ async function fetchData() {
 fetchData();
 
 /*
-Append frugter i DOM
+Append frugter i DOM (Casper)
 */
 function appendFrugter(frugter) {
   let htmlTemplate = "";
@@ -37,7 +39,7 @@ function appendFrugter(frugter) {
 }
 
 /*
-Søgefunktion på frugter
+Søgefunktion på frugter (Martin)
 */
 function search(value) {
 	
@@ -56,7 +58,7 @@ function search(value) {
 
 
 /*
-Detail view på frugter
+Detail view på frugter (Martin)
 */
 function showDetailView(id) {
   const frugtToShow = _frugter.find(frugt => frugt.id === id);
@@ -100,6 +102,74 @@ function showDetailView(id) {
 		<p>
   			<span style="float: left"><b>Vitamin E:</b></span>
   			<span style="float: right">${frugtToShow.vitaminE}</span><br>
+		</p>
+    </article>
+  `;
+}
+
+/*
+Fetches json data from the file smoothies.json (Casper)
+*/
+async function fetchSmoothiesData() {
+  const response = await fetch('json/smoothies.json');
+  const smoothiesData = await response.json();
+  _smoothies = smoothiesData;
+  console.log(_smoothies);
+  appendSmoothies(_smoothies);
+}
+
+fetchSmoothiesData();
+
+/*
+Append smoothies i DOM (Casper)
+*/
+function appendSmoothies(smoothies) {
+  let htmlTemplate = "";
+  for (let smoothie of smoothies) {
+    htmlTemplate += /*html*/`
+        <article onclick="showSmoothieDetailView(${smoothie.id})">
+          <img src="${smoothie.img}"><br>
+			<img style="width: 45px;" src="${smoothie.frugt1img}">
+			<img style="width: 45px;" src="${smoothie.frugt2img}">
+			<img style="width: 45px;" src="${smoothie.frugt3img}">
+          <h2>${smoothie.navn}</h2>
+        </article>
+    `;
+  }
+  document.querySelector('#smoothies-container').innerHTML = htmlTemplate;
+}
+
+/*
+Detail view på smoothies (Martin)
+*/
+function showSmoothieDetailView(id) {
+  const smoothieToShow = _smoothies.find(smoothie => smoothie.id === id);
+  navigateTo("smoothie-detail-view");
+  document.querySelector("#smoothie-detail-view-container").innerHTML = /*html*/`
+    <article>
+		<img src="${smoothieToShow.img}">
+		<h3>${smoothieToShow.navn}</h3><br>
+		<p>
+  			<b>Smag:</b><br>
+			${smoothieToShow.smag1}, ${smoothieToShow.smag2} og ${smoothieToShow.smag3}<br><br>
+		</p>
+		<p>
+  			<span style="float: left"><b>Frugter:</b></span><br>
+		</p>
+		<p>
+  			<span style="float: right">1 servering af: ${smoothieToShow.frugt1navn}</span><br>
+		</p>
+		<p>
+  			<span style="float: right">1 servering af: ${smoothieToShow.frugt2navn}</span><br>
+		</p>
+		<p>
+  			<span style="float: right">1 servering af: ${smoothieToShow.frugt3navn}</span><br><br>
+		</p>
+		<p>
+  			<span style="float: left"><b>Andre ingredienser:</b></span><br>
+		</p>
+		<p>
+  			<span style="float: right">200ml valgfri mælk el. yoghurt</span><br>
 		</p>
     </article>
   `;

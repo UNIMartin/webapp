@@ -14,14 +14,14 @@
 </head>
 
 <body onhashchange="pageChange()">
-  <!-- tabbar navigation -->
+  <!-- tabbar navigation (Casper) -->
   <nav class="tabbar">
     <a href="#frugter">Frugt</a>
     <a href="#smoothies">Smoothies</a>
   </nav>
 
   <!-- pages -->
-  <!-- home page -->
+  <!-- home page (Casper) -->
   <section id="frugter" class="page">
     <header class="topbar" style="background-image: url('img/fruit-banner-01.png')">
     </header>
@@ -31,18 +31,27 @@
     <section id="frugter-container" class="grid-container"></section>
   </section>
 
-  <!-- smoothie page -->
+  <!-- smoothie page (Martin)-->
   <section id="smoothies" class="page">
-    <header class="topbar" style="background-image: url('img/smoothie-banner-01.png')">
+    <header class="smoothie-topbar" style="background-image: url('img/smoothie-banner-01.png')">
     </header>
+	  <section id="smoothies-container" class="grid-container"></section>
   </section>
   
-  <!-- detail page -->
+  <!-- detail page (Casper) -->
   <section id="detail-view" class="page">
     <header class="topbar" style="background-image: url('img/fruit-banner-01.png');" >
       <a class="left" href="#frugter"><span class="material-icons md-48">arrow_back</span></a>
     </header>
     <section id="detail-view-container" class="detailed_container"></section>
+  </section>
+	
+	<!-- smoothie detail page (Martin) -->
+	<section id="smoothie-detail-view" class="page">
+    <header class="topbar" style="background-image: url('img/smoothie-banner-01.png');" >
+      <a class="left" href="#smoothies"><span class="material-icons md-48">arrow_back</span></a>
+    </header>
+    <section id="smoothie-detail-view-container" class="detailed_container"></section>
   </section>
 
 

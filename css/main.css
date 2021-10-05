@@ -1,4 +1,4 @@
-/* ---------- root variables ---------- */
+/* ---------- root variables (Casper) ---------- */
 :root {
   --green: rgb(92, 190, 79);
 	--green-opacity: rgb(92, 190, 79, 0.7);
@@ -8,7 +8,7 @@
   --font-family: "Futura", Trebuchet MS, Arial, sans-serif;
 }
 
-/* ---------- general styling ---------- */
+/* ---------- general styling (Casper) ---------- */
 html {
   color: var(--black);
   font-family: var(--font-family);
@@ -49,7 +49,7 @@ img{
 	text-shadow: -2px 3px var(--black);
 }
 
-/* ---------- topbar styling ---------- */
+/* ---------- topbar styling (Martin) ---------- */
 .topbar {
   background-color: var(--green);
   padding: 55px;
@@ -63,11 +63,6 @@ img{
   background-repeat: no-repeat;
 }
 
-.topbar h2 {
-  margin: 0;
-  font-weight: 600;
-}
-
 .topbar a {
   text-decoration: none;
   color: var(--white);
@@ -79,11 +74,20 @@ img{
   left: 20px;
 }
 
-.topbar a.right {
-  right: 20px;
+.smoothie-topbar {
+  background-color: var(--green);
+  padding: 55px;
+	margin-top: -55px;
+	position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: 100%;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
 }
 
-/* ---------- tabbar styling ---------- */
+/* ---------- tabbar styling (Casper) ---------- */
 .tabbar {
   background-color: var(--green);
   position: fixed;
@@ -118,7 +122,7 @@ img{
   color: var(--green);
 }
 
-/* ---------- page styling ---------- */
+/* ---------- page styling (Casper) ---------- */
 .page {
   display: none;
   /*min heigh is screen heigh minus height of tab and top bar */
@@ -128,9 +132,6 @@ img{
   /* padding equals height of tabbar and topbar */
   padding: 55px 0;
 }
-
-/* ---------- logo styling ---------- */
-
 
 /* ---------- animations ---------- */
 /* fade in */
@@ -144,7 +145,7 @@ img{
   }
 }
 
-/* ---------- grid container styling ---------- */
+/* ---------- grid container styling (Martin) ---------- */
 .grid-container {
   display: flex;
 	flex-wrap: wrap;
@@ -173,7 +174,7 @@ img{
   height: auto;
 }
 
-/* ---------- tools grid styling ---------- */
+/* ---------- tools grid styling (Martin) ---------- */
 
 .tools-grid {
   background-color: var(--green);
@@ -195,7 +196,7 @@ img{
   max-width: 350px;
 }
 
-/* ---------- form styling ---------- */
+/* ---------- form styling (Martin) ---------- */
 /* input form styling */
 form {
   margin: auto;
@@ -213,7 +214,7 @@ input {
   border: 0;
 }
 
-/* ---------- custom select styling ---------- */
+/* ---------- custom select styling (Martin) ---------- */
 select{
   background-color: var(--green);
   border: none;
@@ -223,7 +224,7 @@ select{
   max-width: 350px;
 }
 
-/* ---------- custom select styling ---------- */
+/* ---------- detail view styling (Martin) ---------- */
 #detail-view-container{
   display: flex;
 	flex-direction: column;
@@ -233,6 +234,19 @@ select{
   margin-top: 15%;
 }
 #detail-view-container img{
+	background-color: var(--green-opacity);
+	border-radius: 40px;
+}
+
+#smoothie-detail-view-container{
+  display: flex;
+	flex-direction: column;
+	background-color: var(--white);
+  padding: 1em;
+  gap: 1em;
+  margin-top: 15%;
+}
+#smoothie-detail-view-container img{
 	background-color: var(--green-opacity);
 	border-radius: 40px;
 }
