@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Healthy Fruits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Healthy Fruits webapp">
+
+  <link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+  
+</head>
+
+<body onhashchange="pageChange()">
+  <!-- tabbar navigation -->
+  <nav class="tabbar">
+    <a href="#frugter">Frugt</a>
+    <a href="#smoothies">Smoothies</a>
+  </nav>
+
+  <!-- pages -->
+  <!-- home page -->
+  <section id="frugter" class="page">
+    <header class="topbar" style="background-image: url('img/fruit-banner-01.png')">
+    </header>
+    <section class="tools-grid">
+      <input type="search" placeholder="Søg efter frugt" onkeyup="search(this.value)" onsearch="search('')">
+    </section>
+    <section id="frugter-container" class="grid-container"></section>
+  </section>
+
+  <!-- smoothie page -->
+  <section id="smoothies" class="page">
+    <header class="topbar" style="background-image: url('img/smoothie-banner-01.png')">
+    </header>
+  </section>
+  
+  <!-- detail page -->
+  <section id="detail-view" class="page">
+    <header class="topbar" style="background-image: url('img/fruit-banner-01.png');" >
+      <a class="left" href="#frugter"><span class="material-icons md-48">arrow_back</span></a>
+    </header>
+    <section id="detail-view-container" class="detailed_container"></section>
+  </section>
+
+
+  <!-- SPA functionality  -->
+  <script src="js/spa.js"></script>
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

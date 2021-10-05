@@ -1,0 +1,238 @@
+/* ---------- root variables ---------- */
+:root {
+  --green: rgb(92, 190, 79);
+	--green-opacity: rgb(92, 190, 79, 0.7);
+  --red: rgb(253, 13, 56);
+  --white: #fff;
+	--black: #000;
+  --font-family: "Futura", Trebuchet MS, Arial, sans-serif;
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--black);
+  font-family: var(--font-family);
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 1000;
+  letter-spacing: 3px;
+}
+
+h1 {
+	font-size: 2.5em;
+	font-weight: 1000;
+	letter-spacing: 4px;
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0.5em 0 0.2em;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+.material-icons.md-48 {
+	font-size: 48px;
+	text-shadow: -2px 3px var(--black);
+}
+
+/* ---------- topbar styling ---------- */
+.topbar {
+  background-color: var(--green);
+  padding: 55px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-size: 100%;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: var(--white);
+  position: absolute;
+  top: 20px;
+}
+
+.topbar a.left {
+  left: 20px;
+}
+
+.topbar a.right {
+  right: 20px;
+}
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+  background-color: var(--green);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+  display: inline-block;
+  color: var(--white);
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 1em;
+	font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Change the color of links on hover */
+.tabbar a:hover {
+  background-color: var(--red);
+  color: var(--green);
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+  background-color: var(--red);
+  color: var(--green);
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  background: var(--white);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 55px 0;
+}
+
+/* ---------- logo styling ---------- */
+
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+  display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  padding: 1em;
+  gap: 1em;
+}
+
+.grid-container article {
+  text-align: center;
+	border-radius: 40px;
+	max-width: 45%;
+  background: var(--green-opacity);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.grid-container article:hover {
+  box-shadow: 0 8px 16px 0 var(--black);
+}
+
+.grid-container article img {
+  width: 70%;
+	padding-top: 10px;
+  max-width: 250px;
+  height: auto;
+}
+
+/* ---------- tools grid styling ---------- */
+
+.tools-grid {
+  background-color: var(--green);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1em;
+  margin-top: 55px;
+  gap: 1em;
+  justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .tools-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.tools-grid label{
+  max-width: 350px;
+}
+
+/* ---------- form styling ---------- */
+/* input form styling */
+form {
+  margin: auto;
+}
+
+
+input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 1em;
+  box-sizing: border-box;
+  display: block;
+  background: var(--white);
+  border: 0;
+}
+
+/* ---------- custom select styling ---------- */
+select{
+  background-color: var(--green);
+  border: none;
+  color: var(--white);
+  padding: 1em;
+  margin: 1em;
+  max-width: 350px;
+}
+
+/* ---------- custom select styling ---------- */
+#detail-view-container{
+  display: flex;
+	flex-direction: column;
+	background-color: var(--white);
+  padding: 1em;
+  gap: 1em;
+  margin-top: 15%;
+}
+#detail-view-container img{
+	background-color: var(--green-opacity);
+	border-radius: 40px;
+}
